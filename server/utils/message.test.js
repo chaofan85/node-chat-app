@@ -23,5 +23,6 @@ describe('generateLocationMessage', () => {
 
     expect(message.from).toBe('Admin');
     expect(message.url).toBe('https://www.google.com/maps?q=1,1');
+    expect(typeof message.createdAt).toBe('number');
   });
 });
