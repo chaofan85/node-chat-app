@@ -40,6 +40,7 @@ describe('Users', () => {
     const removedUser = preUsers.removeUser(id);
 
     expect(removedUser.id).toBe("1");
+    expect(preUsers.users.length).toBe(2);
   });
 
   it('should not remove user', () => {
@@ -48,6 +49,7 @@ describe('Users', () => {
     const removedUser = preUsers.removeUser("4");
     expect(removedUser).toBeFalsy();
     expect(preUsers.users).toEqual(users);
+    expect(preUsers.users.length).toBe(3);
   });
 
   it('should find user', () => {
