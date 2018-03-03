@@ -36,19 +36,30 @@ describe('Users', () => {
   });
 
   it('should remove a user', () => {
+    const id = "1";
+    const removedUser = preUsers.removeUser(id);
 
+    expect(removedUser.id).toBe("1");
   });
 
   it('should not remove user', () => {
+    const users = preUsers.users;
 
+    const removedUser = preUsers.removeUser("4");
+    expect(removedUser).toBeFalsy();
+    expect(preUsers.users).toEqual(users);
   });
 
   it('should find user', () => {
+    const user = preUsers.getUser("2");
 
+    expect(user.name).toBe("Randy");
   });
 
   it('should not find user', () => {
+    const user = preUsers.getUser("325423");
 
+    expect(user).toBeFalsy();
   });
 
   it('should return names for node course', () => {
